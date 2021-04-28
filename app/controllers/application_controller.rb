@@ -15,17 +15,15 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  get "/" do
-    @movements = Movement.all
-    erb :homepage
-  end
+  # get "/" do
+  #   @jokes = Joke.all
+  #   erb :homepage
+  # end
 
   not_found do
     # flash[:error] = "Couldn't find that route."
     redirect "/welcome"
-  end
-
-  private 
+  end 
 
   def current_user
     User.find_by_id(session[:id]) 

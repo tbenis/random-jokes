@@ -1,1 +1,27 @@
 <h1>Insert the form to edit an instance of your model here.</h1>
+<% if @joke.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @joke.errors.count %> error(s) prohibited this joke from being saved:</h2>
+ 
+    <ul>
+    <% @joke.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+<form action="/jokes/ <%= @joke.id %>" method="post">
+  <label for="title">Joke Title:</label> 
+  <input id="title" name="joke[title]" type="text" value="<%= @joke.title %>"/>
+
+  <label for="setup">Setup:</label> 
+  <input id="setup" name="joke[setup]" type="textarea" value="<%= @joke.setup %>"/>
+
+  <label for="punch-line">Punchline:</label> 
+  <input id="punch-line" name="joke[punchline]" type="textarea" value="<%= @joke.punchline %>"/>
+  
+  <input type="submit" value="Update Joke">
+</form>

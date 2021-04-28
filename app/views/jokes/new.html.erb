@@ -1,14 +1,26 @@
 <h1>Insert the form to create a new instance of your model.</h1>
 
-<form action="/" method="post">
+<% if @joke.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @joke.errors.count %> error(s) prohibited this joke from being saved:</h2>
+ 
+    <ul>
+    <% @joke.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/jokes" method="post">
   <label for="title">Joke Title:</label> 
-  <input id="title" name="title" type="text" />
+  <input id="title" name="joke[title]" type="text" />
 
   <label for="setup">Setup:</label> 
-  <input id="setup" name="setup" type="textarea" />
+  <input id="setup" name="joke[setup]" type="textarea" />
 
   <label for="punch-line">Punchline:</label> 
-  <input id="punch-line" name="punch-line" type="textarea" />
+  <input id="punch-line" name="joke[punchline]" type="textarea" />
   
-  <input type="submit" value="Submit">
+  <input type="submit" value="Create Joke">
 </form>
