@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     set :sessions, true
     set :session_secret, ENV["SESSION_SECRET"]
     set :method_override, true
-    register Sinatra::Flash
+    # register Sinatra::Flash
   end
 
   get "/" do
@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
   end
 
   not_found do
-    flash[:error] = "Couldn't find that route."
+    # flash[:error] = "Couldn't find that route."
     redirect "/welcome"
   end
 
@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
 
   def redirect_if_not_logged_in
     if !logged_in?
-      flash[:error] = "You must be logged in to view that page"
+      # flash[:error] = "You must be logged in to view that page"
       redirect "/login"
     end
   end
