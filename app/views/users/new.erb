@@ -1,3 +1,11 @@
+<% if flash[:error] %>
+    <div class="text-danger">
+        <h4 class="error"><%= flash[:error] %></h4>
+    </div>
+    <p> <% flash.discard %> </p>
+<% end %>
+
+
 
 <div class="form-container">
   <form action="/users" method="post">

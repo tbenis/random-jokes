@@ -3,17 +3,23 @@
   <form action="/login" method="post">
     <div class="form-group">
       <label for="email">Email Address:</label> 
-  <label for="email">Email Address:</label> 
-      <label for="email">Email Address:</label> 
       <input id="email" name="user[email]" type="email" placeholder="Email"  class="form-control" required/>
     </div>  
 
     <div class="form-group">
       <label for="password">Password:</label> 
-  <label for="password">Password:</label> 
-      <label for="password">Password:</label> 
       <input id="password" name="user[password]" placeholder="Password"  type="password" class="form-control" required/>
     </div> 
 
-  <input type="submit" value="Submit">
-</form>
+    <% if flash[:error] %>
+    <div class="text-danger">
+        <p class="error"><%= flash[:error] %></p>
+        <p> <% flash.discard %> </p>
+    </div>
+<% end %>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>
+
+<br>

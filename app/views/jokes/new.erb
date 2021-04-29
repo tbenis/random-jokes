@@ -19,6 +19,12 @@
       <label for="punch-line">Punchline:</label> 
       <input id="punch-line" name="joke[punchline]" type="textarea" placeholder="For example: It was two tired!" class="form-control" required/>
     </div>
+     <% if flash[:error] %>
+      <div class="text-danger">
+          <p class="error"><%= flash[:error] %></p>
+          <p> <% flash.discard %> </p>
+      </div>
+    <% end %>
     <input type="submit" value="Create Joke" class="btn btn-primary">
   </form>
 </div>
