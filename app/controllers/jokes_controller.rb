@@ -67,10 +67,10 @@ class JokesController < ApplicationController
     @joke = Joke.find_by_id(params[:id])
     if @joke.nil?
       flash[:error] = "Couldn't find a joke with id: #{params[:id]}"
-    redirect "/jokes"
+      redirect "/jokes"
+    end
   end
-end
-
+  
   def redirect_if_not_authorized
     redirect_if_not_logged_in
     if !authorize_joke(@joke) 
