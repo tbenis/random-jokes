@@ -34,6 +34,8 @@ class JokesController < ApplicationController
 
   # GET: /jokes/5/edit
   get "/jokes/:id/edit" do
+    get_joke
+    redirect_if_not_authorized
     erb :"/jokes/edit.html"
   end
 
