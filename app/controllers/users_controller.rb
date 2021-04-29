@@ -1,13 +1,24 @@
 class UsersController < ApplicationController
-  
- # GET: /users
+  # GET: /users
   get '/users/new' do 
     # flash[:error] = "Test new route" if !(flash[:error])
     erb :'/users/new'
   end 
   
   post '/users' do 
+    user = User.new(params[:user])
+    puts user
+    if user.save
+        session[:id] = user.id
+        redirect "/users/#{session[:id]}"
+    else 
       flash[:error] = user.errors.full_messages.first
+      # binding.pry
+      # erb :'/users/new'
+      redirect '/users/new'
+
+    end
+  end
 
   get "/users/:id" do
     redirect_if_not_logged_in
@@ -25,6 +36,7 @@ class UsersController < ApplicationController
   # # GET: /users
   get "/users" do
     redirect_if_not_logged_in
+    erb :"/users/show"
   end
 
   # # GET: /users/new
