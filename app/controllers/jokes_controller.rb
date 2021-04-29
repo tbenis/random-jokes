@@ -28,6 +28,7 @@ class JokesController < ApplicationController
 
   # GET: /jokes/5
   get "/jokes/:id" do
+    get_joke
     erb :"/jokes/show.html"
   end
 
