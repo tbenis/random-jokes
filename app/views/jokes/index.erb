@@ -1,8 +1,10 @@
-<h1>This is the Model's index page.</h1>
+<h4>Entire Jokes Library</h4>
+
+<br>
 
 
 <% @jokes.each do |joke| %>
-<p><a href="/jokes/<%= joke.id %>"> <%= joke.title %> / <%= joke.setup %> / <%= joke.punchline %> </a></p>
+<p><a href="/jokes/<%= joke.id %>"> <%= joke.title %></a> | Created by: <a href="/users/<%=joke.user.id%>"> <%= joke.user.name%>  <!--/ <%= joke.setup %> / <%= joke.punchline %> --> </a></p>
 <% end %>
 
 <hr>
