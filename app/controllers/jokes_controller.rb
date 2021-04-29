@@ -51,6 +51,8 @@ class JokesController < ApplicationController
     @joke.destroy
     # flash[:success] = "Joke successfully deleted."
     redirect "/jokes"
+  end
+
     redirect "/jokes"
   end
 end
