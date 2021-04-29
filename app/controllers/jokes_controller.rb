@@ -3,14 +3,14 @@ class JokesController < ApplicationController
   # GET: /jokes
   get "/jokes" do
     @jokes = Joke.all
-    erb :"/jokes/index.html"
+    erb :"/jokes/index"
   end
 
   # GET: /jokes/new
   get "/jokes/new" do
     redirect_if_not_logged_in
     @joke = Joke.new
-    erb :"/jokes/new.html"
+    erb :"/jokes/new"
   end
 
   # POST: /jokes
@@ -21,7 +21,7 @@ class JokesController < ApplicationController
       flash[:success] = "Joke successfully created."
       redirect "/jokes"
     else
-      erb :"/jokes/new.html"
+      erb :"/jokes/new"
     end
     
   end
@@ -29,14 +29,14 @@ class JokesController < ApplicationController
   # GET: /jokes/5
   get "/jokes/:id" do
     get_joke
-    erb :"/jokes/show.html"
+    erb :"/jokes/show"
   end
 
   # GET: /jokes/5/edit
   get "/jokes/:id/edit" do
     get_joke
     redirect_if_not_authorized
-    erb :"/jokes/edit.html"
+    erb :"/jokes/edit"
   end
 
   # PATCH: /jokes/5
@@ -48,7 +48,7 @@ class JokesController < ApplicationController
       redirect "/jokes/" 
       redirect "/jokes/#{@joke.id}"
     else 
-      erb :"/jokes/edit.html"
+      erb :"/jokes/edit"
     end
     
   end
