@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-
-  # GET: /users
+  
+ # GET: /users
   get '/users/new' do 
     erb :'/users/new'
-  end
-
+  end 
+  
   post '/users' do 
       @user = User.new(email: params[:email], password: params[:password])
       
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
           redirect "/"
       else 
           erb :'users/new'
-  end
+      end
   end
 
   # # GET: /users
@@ -50,6 +50,6 @@ class UsersController < ApplicationController
   # delete "/users/:id/delete" do
   #   redirect "/users"
   # end
-  end
+end
 
 
