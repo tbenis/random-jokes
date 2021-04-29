@@ -17,6 +17,11 @@
   <body>
     <div class="wrapper">
 
+    <% if logged_in? %>
+      <h3> <%= current_user.name%>,  would you like to <a href="/logout">Logout</a>?</h3>
+      <br>
+    <%end%>
+
         <%= yield %>
 
       <footer class="branding">
