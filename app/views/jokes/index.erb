@@ -4,3 +4,8 @@
 <% @jokes.each do |joke| %>
 <p><a href="/jokes/<%= joke.id %>"> <%= joke.title %> / <%= joke.setup %> / <%= joke.punchline %> </a></p>
 <% end %>
+
+<hr>
+<h5> <a href="/users/<%=session[:id]%>"> Go back to your profile </a> | <a href="/jokes/new"> Create a joke </a>  </h5>
+
+
