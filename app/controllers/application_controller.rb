@@ -5,10 +5,11 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    set :sessions, true
-    set :session_secret, ENV["SESSION_SECRET"]
+    enable :sessions
+    # set :sessions, true
+    set :session_secret, ENV['SUPER_SECRET_PASSWORD']
     set :method_override, true
-    # register Sinatra::Flash
+    register Sinatra::Flash
   end
 
   get "/" do
