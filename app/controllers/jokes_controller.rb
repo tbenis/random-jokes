@@ -53,6 +53,11 @@ class JokesController < ApplicationController
     redirect "/jokes"
   end
 
+
+  def get_joke 
+    @joke = Joke.find_by_id(params[:id])
+    if @joke.nil?
+      flash[:error] = "Couldn't find a joke with id: #{params[:id]}"
     redirect "/jokes"
   end
 end
