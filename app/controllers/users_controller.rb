@@ -8,15 +8,24 @@ class UsersController < ApplicationController
   
   post '/users' do 
       flash[:error] = user.errors.full_messages.first
+
+  get "/users/:id" do
+    redirect_if_not_logged_in
+    @user = User.find_by_id(params[:id])
+    
+    if @user.nil?
       flash[:error] = "Couldn't find a user with id: #{params[:id]}"
-          erb :'users/new'
-      end
+      redirect "/"
+    else
+      erb :'/users/show'
+    end
+    
   end
 
   # # GET: /users
-  # get "/users" do
-  #   erb :"/users/index"
-  # end
+  get "/users" do
+    redirect_if_not_logged_in
+  end
 
   # # GET: /users/new
   # get "/users/new" do

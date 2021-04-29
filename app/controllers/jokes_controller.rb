@@ -2,6 +2,7 @@ class JokesController < ApplicationController
 
   # GET: /jokes
   get "/jokes" do
+    redirect_if_not_logged_in
     @jokes = Joke.all
     erb :"/jokes/index"
   end
@@ -29,6 +30,7 @@ class JokesController < ApplicationController
 
   # GET: /jokes/5
   get "/jokes/:id" do
+    redirect_if_not_logged_in
     get_joke
     erb :"/jokes/show"
   end
@@ -44,6 +46,7 @@ class JokesController < ApplicationController
   patch "/jokes/:id" do
     get_joke
     redirect_if_not_authorized
+    if @joke.update( title: params[:joke][:title], setup: params[:joke][:setup], punchline: params[:joke][:punchline])
       flash[:success] = "Joke successfully updated."
       redirect "/jokes/#{@joke.id}"
     else 
