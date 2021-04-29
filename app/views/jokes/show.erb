@@ -7,13 +7,17 @@
  <i>Created by: <a href="/users/<%= @joke.user.id%>"> <%= @joke.user.name %> </a> </i> 
 
 
-<% if logged_in? && authorize_joke(@joke) || logged_in? && manager_user(current_user) %>
+<div>
+<% if logged_in? && authorize_joke(@joke)%>
   <div>
-    <a href="/jokes/<%= @joke.id %>/edit"><button>Edit</button></a> 
-    <form method="post" action="/jokes/<%= @joke.id %>" style="display: inline-block;">
+  <br/>
+    <a href="/jokes/<%= @joke.id %>/edit"><button>Edit</button></a> | 
+    <form method="post" action="/jokes/<%=@joke.id%>/delete" style="display: inline-block;">
       <input type="hidden" name="_method" value="delete" />
       <input type="submit" value="Delete" />
     </form>
   </div>
 
 <% end %>
+
+</div>
