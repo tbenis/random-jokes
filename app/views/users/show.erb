@@ -8,4 +8,34 @@
 <% end %>
 
 
+<% if logged_in? && current_user.id.to_s == params[:id] %>
+    <h1>Hello <%= current_user.name %>! </h1>
+    <p>Here are the jokes you created:</p>
+<%else%>
+    <h3> <b> Jokes added by <%= @user.name %>: </b> </h3>
+<%end%>
 
+<%if @user.jokes.length > 0 %>
+
+    <% @user.jokes.each do |joke| %>
+    <p> <a href="/jokes/<%=joke.id%>"><%= joke.title%>:</a> </p>
+    <p> <%= joke.setup%> </p>
+    <p> <%= joke.punchline%> </p>
+
+    <% if logged_in? && current_user.id.to_s == params[:id] %>
+       <!-- <a href="/jokes/<%= joke.id %>/edit"><button>Edit</button></a>
+        <form method="post" action="/jokes/<%=joke.id%>/delete" style="display: inline-block;">
+            
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="Delete" />
+        </form> -->
+    <%end%>
+
+    </p>  
+    <%end%>
+
+    <%else%>
+
+        <p>[There are currently no jokes to show]</p>
+
+    <%end%>
