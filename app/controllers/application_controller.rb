@@ -16,14 +16,12 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  # get "/" do
-  #   @jokes = Joke.all
-  #   erb :homepage
-  # end
+  get "/error" do
+    erb :error
+  end
 
   not_found do
-    flash[:error] = "Couldn't find that route."
-    redirect "/welcome"
+    redirect "/error"
   end 
 
   def current_user
