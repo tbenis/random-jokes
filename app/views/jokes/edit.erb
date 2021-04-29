@@ -1,14 +1,11 @@
 <h1>Insert the form to edit an instance of your model here.</h1>
 <% if @joke.errors.any? %>
-  <div id="error_explanation">
     <h2><%= @joke.errors.count %> error(s) prohibited this joke from being saved:</h2>
- 
     <ul>
     <% @joke.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
-  </div>
 <% end %>
 
 
@@ -17,24 +14,17 @@
   
     <div class="form-group">
       <label for="title">Joke Title:</label> 
-  <label for="title">Joke Title:</label> 
-      <label for="title">Joke Title:</label> 
       <input id="title" name="joke[title]" type="text" value="<%= @joke.title %>" class="form-control" required/>
     </div>
     <div class="form-group">
       <label for="setup">Setup:</label> 
-  <label for="setup">Setup:</label> 
-      <label for="setup">Setup:</label> 
       <input id="setup" name="joke[setup]" type="textarea" value="<%= @joke.setup %>"  class="form-control" required/>
     </div>
     <div class="form-group">
-      <label for="punch-line">Punchline:</label> 
-  <label for="punch-line">Punchline:</label> 
       <label for="punch-line">Punchline:</label> 
       <input id="punch-line" name="joke[punchline]" type="textarea" value="<%= @joke.punchline %>" class="form-control" required/>
     </div>
     <input id="hidden" type="hidden" name="_method" value="patch">
       <input type="submit" value="Update Joke">
   </form>
-
 </div>
