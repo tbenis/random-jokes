@@ -19,7 +19,7 @@ class JokesController < ApplicationController
     @joke = current_user.jokes.build(title: params[:jokes][:title],setup: params[:joke][:setup],puchline: params[:joke][:punchline])
     if @joke.save
       flash[:success] = "Joke successfully created."
-    redirect "/jokes"
+      redirect "/jokes"
     else
       erb :"/jokes/new.html"
     end
@@ -41,7 +41,16 @@ class JokesController < ApplicationController
 
   # PATCH: /jokes/5
   patch "/jokes/:id" do
-    redirect "/jokes/:id"
+    get_joke
+    redirect_if_not_authorized
+    if @joke.update(title: params[:jokes][:title],setup: params[:joke][:setup],puchline: params[:joke][:punchline])
+      # flash[:success] = "Joke successfully updated."
+      redirect "/jokes/" 
+      redirect "/jokes/#{@joke.id}"
+    else 
+      erb :"/jokes/edit.html"
+    end
+    
   end
 
   # DELETE: /jokes/5/delete
