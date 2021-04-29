@@ -21,6 +21,7 @@ class JokesController < ApplicationController
       flash[:success] = "Joke successfully created."
       redirect "/jokes"
     else
+      flash[:error] = @joke.errors.full_messages.first
       erb :"/jokes/new"
     end
     
@@ -43,9 +44,7 @@ class JokesController < ApplicationController
   patch "/jokes/:id" do
     get_joke
     redirect_if_not_authorized
-    if @joke.update(title: params[:jokes][:title],setup: params[:joke][:setup],puchline: params[:joke][:punchline])
-      # flash[:success] = "Joke successfully updated."
-      redirect "/jokes/" 
+      flash[:success] = "Joke successfully updated."
       redirect "/jokes/#{@joke.id}"
     else 
       erb :"/jokes/edit"
@@ -58,7 +57,7 @@ class JokesController < ApplicationController
     get_joke
     redirect_if_not_authorized
     @joke.destroy
-    # flash[:success] = "Joke successfully deleted."
+    flash[:success] = "Joke successfully deleted."
     redirect "/jokes"
   end
 

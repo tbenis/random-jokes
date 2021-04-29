@@ -5,19 +5,13 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do 
-      user = User.find_by_username(params[:email])
-      if user && user.authenticate(params[:password])
-          session[:id] = user.id
-          redirect "/users/show"     
-      else
-          @error = "Incorrect username or password. Try again."
-          erb :'/sessions/login'   
-      end
+        flash[:success] = "Successfully logged in!"
+      flash[:error] = "Incorrect email or password. Try again."
   end
 
   delete '/logout' do 
       session.clear
-      # flash[:success] = "You are now logged out."
+      flash[:success] = "You are now logged out."
       redirect "/"
   end
 end

@@ -2,16 +2,13 @@ class UsersController < ApplicationController
   
  # GET: /users
   get '/users/new' do 
+    # flash[:error] = "Test new route" if !(flash[:error])
     erb :'/users/new'
   end 
   
   post '/users' do 
-      @user = User.new(email: params[:email], password: params[:password])
-      
-      if @user.save
-          session[:id] = @user.id
-          redirect "/"
-      else 
+      flash[:error] = user.errors.full_messages.first
+      flash[:error] = "Couldn't find a user with id: #{params[:id]}"
           erb :'users/new'
       end
   end
