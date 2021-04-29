@@ -1,0 +1,21 @@
+<div class="container">
+  <img src="images/four-0-four.png" class="img-responsive main-image" >
+  <div class="col-md-8 col-md-offset-2">
+
+    <br>
+    <h2>Sorry - Could not find what you are looking for</h2>
+
+    <div class="content">
+
+      <% if logged_in? %>
+
+            <h5> <a href="/users/<%=session[:id]%>"> Back to your profile </a> </h5>
+
+        <%else%>
+
+            <h5> <a href="/"> Go to Homepage </a> </h5>
+
+      <%end%>
+
+  </div>
+</div>
