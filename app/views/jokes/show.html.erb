@@ -1,5 +1,9 @@
 <h1>This is the show page for an individual instance of your model.</h1>
 
+
+
+
+<% if logged_in? && authorize_joke(@joke) || logged_in? && manager_user(current_user) %>
   <div>
     <a href="/jokes/<%= @joke.id %>/edit"><button>Edit</button></a> 
     <form method="post" action="/jokes/<%= @joke.id %>" style="display: inline-block;">
@@ -7,3 +11,5 @@
       <input type="submit" value="Delete" />
     </form>
   </div>
+
+<% end %>
