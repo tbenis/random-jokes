@@ -13,6 +13,12 @@ gem 'bcrypt'
 gem 'tux'
 gem 'dotenv'
 
+group :development do
+  gem 'sqlite3', '~> 1.3.6'
+  gem 'tux'
+  gem 'pry'
+end
+
 group :test do
   gem 'rspec'
   gem 'capybara'
