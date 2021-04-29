@@ -1,16 +1,6 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>So what's the joke?</h1>
 
-<% if @joke.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @joke.errors.count %> error(s) prohibited this joke from being saved:</h2>
- 
-    <ul>
-    <% @joke.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+
 
 <form action="/jokes" method="post">
   <label for="title">Joke Title:</label> 
@@ -24,3 +14,7 @@
   
   <input type="submit" value="Create Joke">
 </form>
+
+<br>
+<h5> <a href="/users/<%=session[:id]%>"> Cancel and return to your profile </a> </h5>
+
