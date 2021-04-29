@@ -61,3 +61,12 @@ class JokesController < ApplicationController
     redirect "/jokes"
   end
 end
+
+  def redirect_if_not_authorized
+    redirect_if_not_logged_in
+    if !authorize_joke(@joke) 
+      flash[:error] = "Permission denied. You can only edit or delete your own jokes."
+      redirect "/jokes"
+    end
+  end
+end
