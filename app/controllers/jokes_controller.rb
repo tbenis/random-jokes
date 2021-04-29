@@ -17,7 +17,7 @@ class JokesController < ApplicationController
   # POST: /jokes
   post "/jokes" do
     redirect_if_not_logged_in
-    @joke = current_user.jokes.build(title: params[:jokes][:title],setup: params[:joke][:setup],puchline: params[:joke][:punchline])
+    @joke = current_user.jokes.new(title: params[:joke][:title],setup: params[:joke][:setup],punchline: params[:joke][:punchline])
     if @joke.save
       flash[:success] = "Joke successfully created."
       redirect "/jokes"
