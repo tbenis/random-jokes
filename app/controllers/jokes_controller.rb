@@ -77,4 +77,9 @@ class JokesController < ApplicationController
       redirect "/jokes"
     end
   end
+
+  def authorize_joke(joke)
+    # true
+    current_user == joke.user
+  end
 end
