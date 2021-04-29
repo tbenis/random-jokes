@@ -2,6 +2,7 @@ class JokesController < ApplicationController
 
   # GET: /jokes
   get "/jokes" do
+    @jokes = Joke.all
     erb :"/jokes/index.html"
   end
 
