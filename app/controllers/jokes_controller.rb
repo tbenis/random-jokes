@@ -46,6 +46,11 @@ class JokesController < ApplicationController
 
   # DELETE: /jokes/5/delete
   delete "/jokes/:id/delete" do
+    get_joke
+    redirect_if_not_authorized
+    @joke.destroy
+    # flash[:success] = "Joke successfully deleted."
+    redirect "/jokes"
     redirect "/jokes"
   end
 end
