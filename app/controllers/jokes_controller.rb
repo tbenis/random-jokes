@@ -8,6 +8,8 @@ class JokesController < ApplicationController
 
   # GET: /jokes/new
   get "/jokes/new" do
+    redirect_if_not_logged_in
+    @joke = Joke.new
     erb :"/jokes/new.html"
   end
 
