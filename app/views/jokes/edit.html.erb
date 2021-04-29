@@ -12,6 +12,7 @@
 <% end %>
 
 
+
 <form action="/jokes/ <%= @joke.id %>" method="post">
   <label for="title">Joke Title:</label> 
   <input id="title" name="joke[title]" type="text" value="<%= @joke.title %>"/>
