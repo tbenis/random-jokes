@@ -1,6 +1,12 @@
 <h1>This is the show page for an individual instance of your model.</h1>
 
 
+<p>Tile: <%= @joke.destination %></p>
+<br>
+<p>Setup: <%= @joke.setup %></p>
+<p>Punchline: <%= @joke.punchline %></p>
+<p>Created by: <%= @joke.user.name %></p>
+
 
 
 <% if logged_in? && authorize_joke(@joke) || logged_in? && manager_user(current_user) %>
