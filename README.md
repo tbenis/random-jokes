@@ -33,6 +33,12 @@ The idea is users can sign up or log in, create an archive of their favorite dad
 Regarding the seeded data, the password for all created users after running ```rake db:seed```  is 'password'
 Each user has a unique email. Head to the terminal and type ```% rake console```. Once the pry console comes up, type ```User.all```  and that will show you all 10 users and their emails. Remember to use ```password``` to login in a browser.
 
+
+
+### Videoo Demo
+[Youtube](https://www.youtube.com/watch?v=juoTqJ3lNx8)
+
+
 ### Author(s)
  Benis Tambe >>>> [GitHub -- Benis Tambe](https://github.com/tbenis)
 ### License 
