@@ -20,11 +20,12 @@ The idea is users can sign up or log in, create an archive of their favorite dad
     ``` 
     % rake db:migrate
    ```
+   <!--
     you should see something like this:
         ![](https://phase2-images.s3.amazonaws.com/Screen+Shot+2021-04-30+at+7.20.03+AM.png)
     
     If you do not see a message that looks like the one above in the terminal, that means migrations did not work. Delete the 'development.sqlite' file in the 'db' folder and try ```rake db:migrate``` again.
-    ![](https://phase2-images.s3.amazonaws.com/Screen+Shot+2021-04-30+at+7.18.44+AM.png)
+    ![](https://phase2-images.s3.amazonaws.com/Screen+Shot+2021-04-30+at+7.18.44+AM.png) -->
 
 4. Seed Database
     ``` 
