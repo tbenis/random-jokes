@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       # binding.pry
       # erb :'/users/new'
       redirect '/users/new'
-
     end
   end
 
@@ -69,5 +68,3 @@ class UsersController < ApplicationController
   #   redirect "/users"
   # end
 end
-
-
