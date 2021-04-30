@@ -36,8 +36,7 @@ Each user has a unique email. Head to the terminal and type ```% rake console```
 
 
 ### Video Demo
-[Youtube](https://www.youtube.com/watch?v=juoTqJ3lNx8)
-
+<a href="https://www.youtube.com/watch?v=juoTqJ3lNx8" target="_blank">Youtube</a>
 
 ### Author(s)
  Benis Tambe >>>> [GitHub -- Benis Tambe](https://github.com/tbenis)
