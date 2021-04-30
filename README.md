@@ -35,11 +35,11 @@ Each user has a unique email. Head to the terminal and type ```% rake console```
 
 
 
-### Videoo Demo
+### Video Demo
 [Youtube](https://www.youtube.com/watch?v=juoTqJ3lNx8)
 
 
 ### Author(s)
  Benis Tambe >>>> [GitHub -- Benis Tambe](https://github.com/tbenis)
-### License 
-#### MIT
+### License:
+MIT
