@@ -15,6 +15,11 @@
 /test/version_tmp/
 /tmp/
 
+# others
+notes
+/db/development.sqlite
+
+
 # Used by dotenv library to load environment variables.
 .env
 
