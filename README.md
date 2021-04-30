@@ -1,4 +1,6 @@
 # Random Jokes App
+![](https://phase2-images.s3.amazonaws.com/random-jokes.png)
+
 
 ## Overview
 
