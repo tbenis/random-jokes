@@ -2,8 +2,8 @@
 
 ## Overview
 
-The Random Jokes app was inspired by a Ruby CLI project I previously created. I wanted to take the idea of something that works in the CLI and code it to work similarly in the web browser. 
-The idea is users can sign up or log in, create an archive of their favorite dad jokes, edit and delete jokes they create and also view jokes collected by other users
+The Random Jokes app was inspired by a Ruby CLI project I previously created. I wanted to take the idea of something that works in a CLI and code it to work similarly in the web browser. 
+The idea is users can sign up or log in, create an archive of their favorite dad jokes, edit and delete jokes they create, and also view jokes collected by other users
 
 ## How to run this project
 1. Clone the Repository
