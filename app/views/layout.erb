@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+      <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" style="box-sizing:unset;">
 
     <% if logged_in? %>
       <h3> <%= current_user.name%>,  would you like to <a href="/logout">Logout</a>?</h3>
